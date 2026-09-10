@@ -17,7 +17,7 @@ const PRODUCTS=[
  {id:"youtube-premium",name:"YouTube Premium",price:11000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/youtube.svg"},
  {id:"deezer-premium",name:"Deezer Premium",price:8000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/deezer-premium.jpg"},
  {id:"canva-45-dias",name:"Canva 45 días",price:10000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/canva-final.png"},
- {id:"canva-12-meses",name:"Canva × 12 meses",price:23000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/canva-final.png"},
+ {id:"canva-12-meses",name:"Canva × 12 meses",price:24000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/canva-final.png"},
  {id:"office-2024",name:"Office 2024",price:25000,delivery:"💻 Activación virtual mediante los servicios oficiales de Microsoft",detail:"",logo:"imagenes/logos/office-2024-final.png"},
  {id:"office-365",name:"Office 365",price:60000,delivery:"🔑 Se entrega correo y contraseña",detail:"📅 Suscripción anual",logo:"imagenes/logos/office-365-final.png"}
 ];
@@ -44,9 +44,9 @@ productsEl.addEventListener("click",e=>{
  const b=e.target.closest("button.add");
  if(!b)return;
  addToCart(b.dataset.id);
- openCart();
 });
 function save(){localStorage.setItem("todo_streaming_cart",JSON.stringify(cart));renderCart()}
+function saveCart(){localStorage.setItem("todo_streaming_cart",JSON.stringify(cart));}
 function durationFor(p){
  if(p.id.includes("spotify-3-meses")) return "3 meses";
  if(p.id.includes("spotify-1-mes")) return "1 mes";
@@ -62,7 +62,7 @@ function renderCart(){
   const p=PRODUCTS.find(y=>y.id===x.id);if(!p)return;
   const qty=Math.max(1,Number(x.qty)||1);x.qty=qty;total+=p.price*qty;
   const d=document.createElement("div");d.className="cartline";
-  d.innerHTML='<div class="cartinfo"><strong>'+p.name+'</strong><small>'+money(p.price)+'</small><div class="cartcontrols"><span class="control-label">Cantidad</span><button class="qtybtn" data-action="minus" data-id="'+p.id+'">−</button><span class="qtyvalue">'+qty+'</span><button class="qtybtn" data-action="plus" data-id="'+p.id+'">+</button></div></div><button class="remove" data-id="'+p.id+'" aria-label="Eliminar">×</button>';
+  d.innerHTML='<div class="cartinfo"><strong>'+p.name+'</strong><small>'+money(p.price)+'</small><div class="cartcontrols"><span class="control-label">Cantidad</span><button class="qtybtn" data-action="minus" data-id="'+p.id+'">−</button><span class="qtyvalue">'+qty+'</span><button class="qtybtn" data-action="plus" data-id="'+p.id+'">+</button></div></div><button class="remove" data-id="'+p.id+'" aria-label="Eliminar producto" title="Eliminar producto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6l1 2h4v2h-1v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7H4V5h4l1-2Zm0 4v11h2V7H9Zm4 0v11h2V7h-2Z"/></svg></button>';
   box.append(d);
  });
  if(!cart.length)box.innerHTML='<p style="color:#697386">Tu carrito está vacío.</p>';
@@ -82,9 +82,9 @@ document.querySelector("#cartBtn").onclick=openCart;
 document.querySelector("#closeCart").onclick=closeCart;
 document.querySelector("#checkout").onclick=()=>{
  if(!cart.length)return alert("Tu carrito está vacío.");
- let total=0,lines=["Hola, quiero realizar este pedido:",""];
+ let total=0,lines=["*Hola, quiero realizar este pedido:*",""];
  cart.forEach(x=>{const p=PRODUCTS.find(y=>y.id===x.id);if(!p)return;total+=p.price*x.qty;lines.push("• "+p.name+" x"+x.qty+" — "+money(p.price))});
- lines.push("","Total: "+money(total));location.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(lines.join("\n"));cart=[];saveCart();renderCart();
+ lines.push("","*TOTAL: "+money(total)+"*");location.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(lines.join("\n"));cart=[];saveCart();renderCart();
 };
 const heroSearch=document.querySelector("#heroSearch");
 let searchTimer, searchRenderTimer;
@@ -102,3 +102,16 @@ heroSearch.oninput=e=>{
   }, 320);
 };
 renderProducts();renderCart();
+
+
+// Menú móvil
+const menuBtn=document.querySelector("#menuBtn");
+const mobileMenu=document.querySelector("#mobileMenu");
+const closeMenuBtn=document.querySelector("#closeMenu");
+const menuOverlay=document.querySelector("#menuOverlay");
+function openMenu(){ mobileMenu.classList.add("open"); menuOverlay.classList.add("open"); document.body.classList.add("menu-open"); menuBtn.setAttribute("aria-expanded","true"); mobileMenu.setAttribute("aria-hidden","false"); }
+function closeMenu(){ mobileMenu.classList.remove("open"); menuOverlay.classList.remove("open"); document.body.classList.remove("menu-open"); menuBtn.setAttribute("aria-expanded","false"); mobileMenu.setAttribute("aria-hidden","true"); }
+menuBtn.addEventListener("click",openMenu);
+closeMenuBtn.addEventListener("click",closeMenu);
+menuOverlay.addEventListener("click",closeMenu);
+document.querySelectorAll(".mobile-nav a").forEach(a=>a.addEventListener("click",closeMenu));

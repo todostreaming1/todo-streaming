@@ -11,11 +11,24 @@
 <body>
 <header class="topbar">
   <div class="top-inner">
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <a class="brand" href="#home"><span>TODO <b>STREAMING</b></span></a>
-    <nav><a href="#home">Inicio</a><a href="#catalogo">Plataformas</a><a href="#ofertas">Ofertas</a><a class="help-nav" href="https://wa.me/573157745826?text=Hola%2C%20tengo%20problemas%20con%20mi%20cuenta.%20Necesito%20ayuda.">Ayuda con mi cuenta</a></nav>
-    <button class="cart-btn" id="cartBtn">🛒 <span>Carrito</span><b id="cartCount">0</b></button>
+    <nav class="desktop-nav"><a href="#home">Inicio</a><a href="#catalogo">Plataformas</a><a href="#ofertas">Ofertas</a><a class="help-nav" href="https://wa.me/573157745826?text=Hola%2C%20tengo%20problemas%20con%20mi%20cuenta.%20Necesito%20ayuda.">Ayuda con mi cuenta</a></nav>
+    <button class="cart-btn" id="cartBtn" aria-label="Abrir carrito">🛒 <span>Carrito</span><b id="cartCount">0</b></button>
   </div>
 </header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-head"><strong>Menú</strong><button id="closeMenu" aria-label="Cerrar menú">×</button></div>
+  <nav class="mobile-nav">
+    <a href="#home">Inicio</a>
+    <a href="#catalogo">Plataformas</a>
+    <a href="#ofertas">Ofertas</a>
+    <a class="help-nav" href="https://wa.me/573157745826?text=Hola%2C%20tengo%20problemas%20con%20mi%20cuenta.%20Necesito%20ayuda.">Ayuda con mi cuenta</a>
+  </nav>
+</div>
+<div class="menu-overlay" id="menuOverlay"></div>
 <main>
 <section class="hero" id="home">
   <div class="hero-inner">
@@ -32,7 +45,7 @@
 <section class="section offers" id="ofertas"><div class="eyebrow">OFERTAS Y PEDIDOS</div><h2>Compra fácil y rápido</h2><div class="three"><article><b>01</b><h3>Elige tus plataformas</h3><p>Encuentra el servicio que necesitas y revisa toda la información antes de comprar.</p></article><article><b>02</b><h3>Añade al carrito</h3><p>Organiza tu pedido en un solo lugar y revisa el total.</p></article><article><b>03</b><h3>Termina por WhatsApp</h3><p>Envía el pedido directamente por WhatsApp para continuar con la compra.</p></article></div></section>
 </main>
 <footer><strong>TODO STREAMING</strong><span>Pedidos y atención por WhatsApp</span><a href="https://wa.me/573157745826?text=Hola%2C%20tengo%20problemas%20con%20mi%20cuenta.%20Necesito%20ayuda.">Ayuda con mi cuenta</a></footer>
-<div class="drawer" id="cartDrawer"><div class="drawerhead"><h2>Tu carrito</h2><button id="closeCart">×</button></div><div id="cartItems"></div><div class="total"><span>Total</span><strong id="cartTotal">$0</strong></div><button class="btn primary full" id="checkout">Comprar por WhatsApp</button></div>
+<div class="drawer" id="cartDrawer"><div class="drawerhead"><h2>Tu carrito</h2><button id="closeCart">×</button></div><div id="cartItems"></div><div class="total"><strong>Total</strong><strong id="cartTotal">$0</strong></div><button class="btn primary full" id="checkout">Comprar por WhatsApp</button></div>
 <a class="floating-whatsapp" href="https://wa.me/573157745826" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg viewBox="0 0 32 32" aria-hidden="true">
     <circle cx="16" cy="16" r="15.2" fill="#25D366"/>
