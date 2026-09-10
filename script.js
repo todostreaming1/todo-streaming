@@ -4,8 +4,8 @@ const PRODUCTS=[
  {id:"netflix",name:"Netflix",price:15000,delivery:"🔑 Se entrega correo y clave asignados",detail:"👤 Cuenta compartida · perfil individual con PIN",logo:"imagenes/logos/netflix.svg"},
  {id:"disney-premium",name:"Disney+ Premium",price:13000,delivery:"🔑 Se entrega correo y clave asignados",detail:"👤 Cuenta compartida · perfil individual · Disney+ Premium",logo:"imagenes/logos/disney-premium.jpg"},
  {id:"disney-estandar",name:"Disney+ Estándar",price:10000,delivery:"🔑 Se entrega correo y clave asignados",detail:"👤 Cuenta compartida · perfil individual",logo:"imagenes/logos/disney-estandar.jpg"},
- {id:"prime-video",name:"Prime Video",price:10000,delivery:"🔑 Se entrega correo y clave asignados",detail:"👤 Cuenta compartida · perfil individual",logo:"imagenes/logos/prime-video.jpg"},
- {id:"hbo-max",name:"HBO Max",price:10000,delivery:"🔑 Se entrega correo y clave asignados",detail:"👤 Cuenta compartida · perfil individual",logo:"imagenes/logos/hbo-max.jpg"},
+ {id:"prime-video",name:"Prime Video",price:9000,delivery:"🔑 Se entrega correo y clave asignados",detail:"👤 Cuenta compartida · perfil individual",logo:"imagenes/logos/prime-video.jpg"},
+ {id:"hbo-max",name:"HBO Max",price:8000,delivery:"🔑 Se entrega correo y clave asignados",detail:"👤 Cuenta compartida · perfil individual",logo:"imagenes/logos/hbo-max.jpg"},
  {id:"hbo-max-platino",name:"HBO Max Platino",price:13000,delivery:"🔑 Se entrega correo y clave asignados",detail:"👤 Cuenta compartida · perfil individual",logo:"imagenes/logos/hbo-max-platino.jpg"},
  {id:"paramount",name:"Paramount+",price:10000,delivery:"🔑 Se entrega correo y clave asignados",detail:"👤 Cuenta compartida · perfil individual",logo:"imagenes/logos/paramount-final.png"},
  {id:"vix-premium",name:"ViX Premium",price:6000,delivery:"🔑 Se entrega correo y clave asignados",detail:"👤 Cuenta compartida · perfil individual",logo:"imagenes/logos/vix-premium.jpg"},
@@ -16,10 +16,10 @@ const PRODUCTS=[
  {id:"spotify-3-meses",name:"Spotify × 3 meses",price:23000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/spotify.svg"},
  {id:"youtube-premium",name:"YouTube Premium",price:11000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/youtube.svg"},
  {id:"deezer-premium",name:"Deezer Premium",price:8000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/deezer-premium.jpg"},
- {id:"canva-45-dias",name:"Canva 45 días",price:11000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/canva-final.png"},
- {id:"canva-12-meses",name:"Canva × 12 meses",price:28000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/canva-final.png"},
+ {id:"canva-45-dias",name:"Canva 45 días",price:10000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/canva-final.png"},
+ {id:"canva-12-meses",name:"Canva × 12 meses",price:23000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/canva-final.png"},
  {id:"office-2024",name:"Office 2024",price:25000,delivery:"💻 Activación virtual mediante los servicios oficiales de Microsoft",detail:"",logo:"imagenes/logos/office-2024-final.png"},
- {id:"office-365",name:"Office 365",price:85000,delivery:"🔑 Se entrega correo y contraseña",detail:"📅 Suscripción anual",logo:"imagenes/logos/office-365-final.png"}
+ {id:"office-365",name:"Office 365",price:60000,delivery:"🔑 Se entrega correo y contraseña",detail:"📅 Suscripción anual",logo:"imagenes/logos/office-365-final.png"}
 ];
 let cart=JSON.parse(localStorage.getItem("todo_streaming_cart")||"[]");
 const money=n=>new Intl.NumberFormat("es-CO",{style:"currency",currency:"COP",maximumFractionDigits:0}).format(n);
