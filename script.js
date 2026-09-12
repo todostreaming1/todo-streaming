@@ -12,7 +12,7 @@ const PRODUCTS=[
  {id:"crunchyroll",name:"Crunchyroll",price:10000,delivery:"🔑 Se entrega correo y clave asignados",detail:"👤 Cuenta compartida · perfil individual",logo:"imagenes/logos/crunchyroll-user.png"},
  {id:"iptv",name:"IPTV",price:10000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/iptv-final.png"},
  {id:"magis-tv-pro",name:"Magis TV Pro",price:11000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/magis-tv-pro.jpg"},
- {id:"spotify-1-mes",name:"Spotify × 1 mes",price:12000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/spotify.svg"},
+ {id:"spotify-1-mes",name:"Spotify × 1 mes",price:10000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/spotify.svg"},
  {id:"spotify-3-meses",name:"Spotify × 3 meses",price:23000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/spotify.svg"},
  {id:"youtube-premium",name:"YouTube Premium",price:11000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/youtube.svg"},
  {id:"deezer-premium",name:"Deezer Premium",price:8000,delivery:"🔑 Se entrega correo y clave asignados",detail:"",logo:"imagenes/logos/deezer-premium.jpg"},
