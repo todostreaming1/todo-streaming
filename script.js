@@ -1,5 +1,5 @@
 const WHATSAPP="573157745826";
-const HELP_URL="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent("Hola, tengo problemas con mi cuenta. Necesito ayuda.");
+const HELP_URL="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent("*Hola, tengo problemas con mi cuenta. Necesito ayuda.*");
 const PRODUCTS=[
  {id:"netflix",name:"Netflix",price:15000,delivery:"🔑 Se entrega correo y clave asignados",detail:"👤 Cuenta compartida · perfil individual con PIN",logo:"imagenes/logos/netflix.svg"},
  {id:"disney-premium",name:"Disney+ Premium",price:13000,delivery:"🔑 Se entrega correo y clave asignados",detail:"👤 Cuenta compartida · perfil individual · Disney+ Premium",logo:"imagenes/logos/disney-premium.jpg"},
